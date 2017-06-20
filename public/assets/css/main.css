@@ -1,0 +1,29 @@
+* {
+    margin:0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+h1 {
+    text-transform: capitalize;
+}
+
+.container {
+    margin: 63px auto;
+}
+
+.item img {
+    width: 70%!important;
+    margin: 0 auto;
+    height: 210px
+}
+
+.btn-yellow {
+    background-color: #fbd43b;
+    width: 80%;
+    margin: 35px auto;
+}
+.row {
+    margin: 0;
+    padding: 0;
+}

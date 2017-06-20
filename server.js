@@ -22,8 +22,10 @@ app.use(morgan(format));
 let router = express.Router();
 
 router.get('/', (req, res) => {
+    // Mi respuesta
   res.json({ name: 'yape-api',version: "0.0.1"});
 });
+
 
 app.use('/api',apiUsers(router,db));
 
