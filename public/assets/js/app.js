@@ -2,8 +2,8 @@
 
 const render = (root) => {
   root.empty();
-  const wrapper = $('<div class="wrapper container"></div>');
-  // wrapper.append(Header(_ => render(root)));
+  const wrapper = $('<div class="wrapper"></div>');
+  wrapper.append(registroNum( _ => render(root)));
 
   root.append(wrapper);
 }

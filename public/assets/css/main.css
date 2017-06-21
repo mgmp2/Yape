@@ -4,21 +4,25 @@
     padding: 0;
 }
 
-h1 {
-    text-transform: capitalize;
+h5 {
+    font-weight: 700;
 }
 
 .container {
-    margin: 63px auto;
+    padding-top: 63px;
 }
 
+/*CAROUSEL*/
+
+#carousel .owl-dot.active span{
+     background: #f64552
+}
 .item img {
-    width: 70%!important;
+    width: 50%!important;
     margin: 0 auto;
-    height: 210px
 }
 
-.btn-yellow {
+.btn-yellow, .btn-yellow:hover {
     background-color: #fbd43b;
     width: 80%;
     margin: 35px auto;
@@ -26,4 +30,34 @@ h1 {
 .row {
     margin: 0;
     padding: 0;
+}
+
+/*--------------*/
+/*REGISTRO*/
+#registro > .row {
+    margin-bottom: 49px;
+}
+#registro img:first-child {
+    width: 105px;
+}
+#registro p {
+    color: #8f8f8f;
+}
+#registro .input-field {
+    position: relative;
+}
+#registro input[type=text]:focus {
+    border-bottom-color: #fbd43b;
+    box-shadow: 0 1px 0 0 #fbd43b;
+}
+#registro .input-field img {
+    position: absolute;
+    width: 84px;
+    height: 35px;
+}
+#terms * {
+    font-size: 14px;
+}
+#registro form a {
+    color: #00c3a3;
 }
