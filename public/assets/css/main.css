@@ -2,6 +2,7 @@
     margin:0;
     box-sizing: border-box;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 h5 {
@@ -17,12 +18,16 @@ h5 {
     font-size: 17.5px;
 }
 
-#registro .input-field, #resendCode .input-field {
+#registro .input-field,
+#resendCode .input-field,
+#passwCard .input-field {
     position: relative;
 }
 #registro img:first-child,
 #resendCode img:first-child,
-#time-out img:first-child {
+#time-out img:first-child,
+#registerCard img:first-child,
+#passwCard img:first-child {
     width: 105px;
 }
 /*CAROUSEL*/
@@ -47,7 +52,8 @@ h5 {
 
 /*--------------*/
 /*REGISTRO*/
-#registro > .row {
+#registro > .row,
+#passwCard > .row {
     margin-bottom: 49px;
 }
 
@@ -72,7 +78,9 @@ h5 {
 
 /*RESEND CODE */
 
-#resendCode .input-field img {
+#resendCode .input-field img,
+#registerCard .input-field img,
+#passwCard .input-field img {
   position: absolute;
   width: 21px;
   height: 21px;
@@ -85,4 +93,18 @@ h5 {
   padding-top: 210px;
   width: 100%;
   height: 100vh;
+}
+/*REGISTER CARD*/
+#registerCard > div:nth-child(2) > div:nth-child(2) {
+    font-size: 18px;
+    color: #00c3a3;
+}
+#registerCard > div:nth-child(2) > div:nth-child(2) > img{
+    width: 21px;
+}
+#registerCard [placeholder="Mes"],
+#registerCard [placeholder="Año"] {
+    width: 21%;
+    margin-right: 7px;
+    margin-left: 7px;
 }

@@ -13,7 +13,7 @@ const registroNum = (update) => {
     const rowSecond = $('<div class="row"></div>');
     const colSecond = $('<div class="input-field col s12"></div>');
     const imgInput  = $('<img src="assets/img/icons/phoneandnumber.png" alt="phone and number" class="responsive-img">');
-    const inputV    = $('<input id="icon_prefix" type="text" class="validate center-align" maxlength="9">');
+    const inputV    = $('<input id="icon_prefix" type="text" class="validate center-align" val="" maxlength="9">');
     const colSec    = $('<div class="col s12" id="terms"></div>');
     const form      = $('<form action="#"></form>');
 
@@ -24,7 +24,7 @@ const registroNum = (update) => {
 
     const rowThird  = $('<div class="row center-align"></div>');
     const colThird  = $('<div class="col s12"></div>');
-    const btn       = $('<button type="button" name="button" class="waves-effect waves-light btn btn-yellow " >CONTINUAR</button>');
+    const btn       = $('<button type="button" name="button" class="waves-effect waves-light btn btn-yellow disabled" >CONTINUAR</button>');
 
     colFirst.append(imgFirst);
     colFirst.append(title);
@@ -43,9 +43,9 @@ const registroNum = (update) => {
     colThird.append(btn);
     rowThird.append(colThird);
 
-    container.append(rowFirst);
-    container.append(rowSecond);
-    container.append(rowThird);
+    registro.append(rowFirst);
+    registro.append(rowSecond);
+    registro.append(rowThird);
 
     inputV.on('keypress', (e) => {
         if(e.which >= 48 && e.which <=57 ) {
@@ -57,17 +57,26 @@ const registroNum = (update) => {
 
     checkb.on('change', (e) => {
         e.preventDefault();
-
-        if($(this).is(':checked')) {
-            valor = $(this).val();
+        if(checkb.is(':checked')) {
+            if(inputV.val().length == 9) { btn.removeClass("disabled")}
         } else {
-            valor = $(this).val();
-        }
-        console.log(valor);
+            btn.addClass("disabled");
+        };
     });
 
-    btn.on('click', () => {
+    btn.on('click', (e) => {
+        e.preventDefault();
         state.phone = inputV.val();
+        $.post('api/registerNumber', {
+           phone: state.phone,
+           terms: true
+       }, (response) => {
+           state.msn = response.message;
+           if(!state.msn || state.msn!="El número ya existe"){
+               update();
+           }
+       },'json'); // post de jQuery
     })
+
     return registro;
 }

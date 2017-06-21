@@ -3,19 +3,32 @@
 const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
-  // wrapper.append(registroNum( _ => render(root)));
-  // wrapper.append(resendCode( _ => render(root)));
-      // wrapper.append(createUser( _ => render(root)));
-      wrapper.append(screenTimeOut (_ => render(root)));
+  if(!state.phone) {
+      wrapper.append(registroNum( _ => render(root)));
+  }
+
+  else if(state.phone && !state.cod) {
+      wrapper.append(resendCode( _ => render(root)));
+  }
+  else if (state.cod) {
+      wrapper.append(createUser( _ => render(root)));
+
+  }
+
+
+    //   wrapper.append(screenTimeOut (_ => render(root)));
+    // wrapper.append(registerCard (_ => render(root)));
+    // wrapper.append(passwCard (_ => render(root)));
+
   root.append(wrapper);
 }
 
 
-
-
 const state = {
     user: null,
-    phone: null
+    phone: null,
+    msn: null,
+    cod: null
 };
 
 $( _ => {
@@ -40,12 +53,6 @@ $('.btn-yellow').on('click', (e) => {
 })
 
 
-// $.post('api/registerNumber', {
-//     phone: 953633612,
-//     terms: true
-// }, (response) => {
-//     console.log(response);
-// },'json'); // post de jQuery
 
 
 });
