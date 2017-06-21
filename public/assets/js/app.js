@@ -4,7 +4,9 @@ const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
   wrapper.append(registroNum( _ => render(root)));
-
+  if(state.phone) {
+      wrapper.append(resendCode( _ => render(root)));
+  }
   root.append(wrapper);
 }
 
@@ -12,7 +14,8 @@ const render = (root) => {
 
 
 const state = {
-    user: null
+    user: null,
+    phone: null
 };
 
 $( _ => {

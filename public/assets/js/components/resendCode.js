@@ -1,19 +1,19 @@
 'use strict';
 
+const resendCode = (update) => {
 
-const registroNum = (update) => {
     const container = $('<div class="container" id="registro"></div>');
 
     const rowFirst  = $('<div class="row center-align"></div>');
     const colFirst  = $('<div class="col s12"></div>');
-    const imgFirst  = $('<img src="assets/img/icons/phone.png" alt="phone">');
-    const title     = $('<h5>Para comenzar validemos tu número</h5>');
-    const parr      = $('<p>Recibirás un SMS con un código de validación </p>');
+    const imgFirst  = $('<img src="assets/img/icons/message.png" alt="phone">');
+    const title     = $('<h5>Ahora ingresa tu código</h5>');
+    const parr      = $('<p>Enviamos un SMS con el código de validación al número<strong>'+state.phone+'</strong></p>');
 
     const rowSecond = $('<div class="row"></div>');
     const colSecond = $('<div class="input-field col s12"></div>');
-    const imgInput  = $('<img src="assets/img/icons/phoneandnumber.png" alt="phone and number" class="responsive-img">');
-    const inputV    = $('<input id="icon_prefix" type="text" class="validate center-align" maxlength="9">');
+    const imgInput  = $('<img src="assets/img/icons/lock.png" alt="phone and number" class="responsive-img">');
+    const inputV    = $('<input id="icon_prefix" type="text" class="validate center-align" placeholder="- - - - -"maxlength="5">');
     const colSec    = $('<div class="col s12" id="terms"></div>');
     const form      = $('<form action="#"></form>');
     const checkb    = $('<input type="checkbox" class="filled-in" id="filled-in-box" value=""/>');
@@ -46,28 +46,6 @@ const registroNum = (update) => {
     container.append(rowSecond);
     container.append(rowThird);
 
-    inputV.on('keypress', (e) => {
-        if(e.which >= 48 && e.which <=57 ) {
-            return true;
-        } else {
-            return false;
-        }
-    });
 
-    checkb.on('change', (e) => {
-        e.preventDefault();
-
-        if($(this).is(':checked')) {
-            valor = $(this).val();
-        } else {
-            valor = $(this).val();
-
-        }
-        console.log(valor);
-    });
-
-    btn.on('click', () => {
-        state.phone = inputV.val();
-    })
-    return container;
+    return container
 }
