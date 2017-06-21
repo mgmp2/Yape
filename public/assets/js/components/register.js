@@ -16,14 +16,14 @@ const registroNum = (update) => {
     const inputV    = $('<input id="icon_prefix" type="text" class="validate center-align" pattern="0||1||2||3||4||5||6||7||8||9"  maxlength="9">');
     const colSec    = $('<div class="col s12" id="terms"></div>');
     const form      = $('<form action="#"></form>');
-    const checkb    = $('<input type="checkbox" class="filled-in" id="filled-in-box" />');
+    const checkb    = $('<input type="checkbox" class="filled-in" id="filled-in-box" value="true" />');
     const label     = $('<label for="filled-in-box">Acepto los </label>');
     const terms     = $('<a href="#" class=""> Términos y Condiciones</a>');
 
 
     const rowThird  = $('<div class="row center-align"></div>');
     const colThird  = $('<div class="col s12"></div>');
-    const btn       = $('<button type="button" name="button" class="waves-effect waves-light btn btn-yellow" disabled>CONTINUAR</button>');
+    const btn       = $('<button type="button" name="button" class="waves-effect waves-light btn btn-yellow disabled" >CONTINUAR</button>');
 
     colFirst.append(imgFirst);
     colFirst.append(title);
@@ -56,9 +56,10 @@ const registroNum = (update) => {
 
     checkb.on('change', (e) => {
         if($('this').is(':checked')) {
-            console.log($('checkb').val());
+          console.log($('this').val());
         } else {
-            console.log($('checkb').val());
+          console.log($('this').val());
+
         }
 
     });
