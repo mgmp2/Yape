@@ -1,7 +1,7 @@
 'use strict';
 
-const registerCard = (update) => {
-
+const registerCard = () => {
+    $('#root').empty();
     const container = $('<div class="container" id="registerCard"></div>');
 
     const rowFirst  = $('<div class="row center-align"></div>');
@@ -21,7 +21,7 @@ const registerCard = (update) => {
 
     const rowThird  = $('<div class="row"></div>');
     const colThird  = $('<div class="input-field col s12"></div>');
-    const text      = $('<span>Fecha de nacimiento</span>');
+    const text      = $('<span>Fecha de vencimiento</span>');
     const inputMes  = $('<input type="text" class="validate center-align" placeholder="Mes" maxlength="2">');
     const line      = $('<span> / </span>');
     const inputAnio = $('<input type="text" class="validate center-align" placeholder="Año" maxlength="2">');
@@ -58,5 +58,5 @@ const registerCard = (update) => {
     container.append(rowBtn);
 
 
-    return container
+    return $('#root').append(container);
 }

@@ -27,7 +27,8 @@ h5 {
 #resendCode img:first-child,
 #time-out img:first-child,
 #registerCard img:first-child,
-#passwCard img:first-child {
+#passwCard img:first-child,
+#createUser img:first-child {
     width: 105px;
 }
 /*CAROUSEL*/
@@ -59,7 +60,8 @@ h5 {
 
 
 
-#registro input[type=text]:focus {
+#registro input[type=text]:focus,
+#createUser input[type=text]:focus {
     border-bottom-color: #fbd43b;
     box-shadow: 0 1px 0 0 #fbd43b;
 }
@@ -80,7 +82,8 @@ h5 {
 
 #resendCode .input-field img,
 #registerCard .input-field img,
-#passwCard .input-field img {
+#passwCard .input-field img,
+#createUser .input-field img {
   position: absolute;
   width: 21px;
   height: 21px;

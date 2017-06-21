@@ -8,16 +8,20 @@ const render = (root) => {
   }
 
   else if(state.phone && !state.cod) {
+
       wrapper.append(resendCode( _ => render(root)));
   }
-  else if (state.cod) {
+  else if (state.cod && !state.user) {
       wrapper.append(createUser( _ => render(root)));
 
   }
+  else if (state.user && state.msn) {
+      wrapper.append(screenTimeOut (_ => render(root)));
+    //   wrapper.append(registerCard (_ => render(root)));
+
+  }
 
 
-    //   wrapper.append(screenTimeOut (_ => render(root)));
-    // wrapper.append(registerCard (_ => render(root)));
     // wrapper.append(passwCard (_ => render(root)));
 
   root.append(wrapper);
@@ -25,10 +29,10 @@ const render = (root) => {
 
 
 const state = {
-    user: null,
     phone: null,
+    cod: null,
     msn: null,
-    cod: null
+    user: null,
 };
 
 $( _ => {

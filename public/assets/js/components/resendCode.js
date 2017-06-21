@@ -30,30 +30,24 @@ const resendCode = (update) => {
     container.append(rowFirst);
     container.append(rowSecond);
 
-    while (parr) {
-
+        // setInterval(function(){
+        //     $.post('api/resendCode', {
+        //         phone: state.phone
+        //     }, (response) => {
+        //         state.cod = response.data;
+        //         console.log(response);
+        //         alert("Él código generado es: " +state.cod);
+        //     },'json');
+        // }, 21000);
         $.post('api/resendCode', { phone: state.phone }, (response) => {
             state.cod = response.data;
             alert("Él código generado es: " +state.cod);
         },'json');
 
-        setInterval(function(){
-            $.post('api/resendCode', {
-                phone: state.phone
-            }, (response) => {
-                state.cod = response.data;
-                console.log(response);
-                alert("Él código generado es: " +state.cod);
-            },'json');
-        }, 21000);
-
         inputV.on('keyup', () => {
             if(state.cod == inputV.val()) {
                 update();
-            }
-
-
+            } 
         })
-    }
     return container
 }
