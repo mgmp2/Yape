@@ -12,6 +12,9 @@ h5 {
     padding-top: 63px;
 }
 
+#carousel p, #registro p {
+    color: #8f8f8f;
+}
 /*CAROUSEL*/
 
 #carousel .owl-dot.active span{
@@ -40,9 +43,7 @@ h5 {
 #registro img:first-child {
     width: 105px;
 }
-#registro p {
-    color: #8f8f8f;
-}
+
 #registro .input-field {
     position: relative;
 }

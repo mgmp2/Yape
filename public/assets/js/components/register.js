@@ -10,13 +10,13 @@ const registroNum = (update) => {
     const title     = $('<h5>Para comenzar validemos tu número</h5>');
     const parr      = $('<p>Recibirás un SMS con un código de validación </p>');
 
-    const rowSecond  = $('<div class="row"></div>');
-    const colSecond  = $('<div class="input-field col s12"></div>');
+    const rowSecond = $('<div class="row"></div>');
+    const colSecond = $('<div class="input-field col s12"></div>');
     const imgInput  = $('<img src="assets/img/icons/phoneandnumber.png" alt="phone and number" class="responsive-img">');
-    const inputV     = $('<input id="icon_prefix" type="text" class="validate center-align" pattern="0||1||2||3||4||5||6||7||8||9"  maxlength="10">');
+    const inputV    = $('<input id="icon_prefix" type="text" class="validate center-align" pattern="0||1||2||3||4||5||6||7||8||9"  maxlength="9">');
     const colSec    = $('<div class="col s12" id="terms"></div>');
-    const form     = $('<form action="#"></form>');
-    const checkb  = $('<input type="checkbox" class="filled-in" id="filled-in-box" />');
+    const form      = $('<form action="#"></form>');
+    const checkb    = $('<input type="checkbox" class="filled-in" id="filled-in-box" />');
     const label     = $('<label for="filled-in-box">Acepto los </label>');
     const terms     = $('<a href="#" class=""> Términos y Condiciones</a>');
 
@@ -46,20 +46,25 @@ const registroNum = (update) => {
     container.append(rowSecond);
     container.append(rowThird);
 
-    // $('for="filled-in-box" ').on('click', function(){
-    //     alert();
-    // });
-    inputV.on('keypress', () => {
-        if(/^[0-9]{9}$/.test(inputV.val())){
-            console.log("good");
-            checkb.on('change', (e) => {
-                console.log($("input[type='checkbox']").val());
-            });
-
+    inputV.on('keypress', (e) => {
+        if(e.which >= 48 && e.which <=57 ) {
+            return true;
+        } else {
+            return false;
         }
     });
 
+    checkb.on('change', (e) => {
+        if($('this').is(':checked')) {
+            console.log($('checkb').val());
+        } else {
+            console.log($('checkb').val());
+        }
 
+    });
 
+    if(inputV.length == 9 ){
+        console.log("bien");
+    }
     return container;
 }
