@@ -2,7 +2,7 @@
 
 
 const registroNum = (update) => {
-    const container = $('<div class="container" id="registro"></div>');
+    const registro = $('<div class="container" id="registro"></div>');
 
     const rowFirst  = $('<div class="row center-align"></div>');
     const colFirst  = $('<div class="col s12"></div>');
@@ -13,17 +13,18 @@ const registroNum = (update) => {
     const rowSecond = $('<div class="row"></div>');
     const colSecond = $('<div class="input-field col s12"></div>');
     const imgInput  = $('<img src="assets/img/icons/phoneandnumber.png" alt="phone and number" class="responsive-img">');
-    const inputV    = $('<input id="icon_prefix" type="text" class="validate center-align" pattern="0||1||2||3||4||5||6||7||8||9"  maxlength="9">');
+    const inputV    = $('<input id="icon_prefix" type="text" class="validate center-align" maxlength="9">');
     const colSec    = $('<div class="col s12" id="terms"></div>');
     const form      = $('<form action="#"></form>');
-    const checkb    = $('<input type="checkbox" class="filled-in" id="filled-in-box" value="true" />');
+
+    const checkb    = $('<input type="checkbox" class="filled-in" id="filled-in-box" value="false"/>');
     const label     = $('<label for="filled-in-box">Acepto los </label>');
     const terms     = $('<a href="#" class=""> Términos y Condiciones</a>');
 
 
     const rowThird  = $('<div class="row center-align"></div>');
     const colThird  = $('<div class="col s12"></div>');
-    const btn       = $('<button type="button" name="button" class="waves-effect waves-light btn btn-yellow disabled" >CONTINUAR</button>');
+    const btn       = $('<button type="button" name="button" class="waves-effect waves-light btn btn-yellow " >CONTINUAR</button>');
 
     colFirst.append(imgFirst);
     colFirst.append(title);
@@ -55,17 +56,18 @@ const registroNum = (update) => {
     });
 
     checkb.on('change', (e) => {
-        if($('this').is(':checked')) {
-          console.log($('this').val());
+        e.preventDefault();
+
+        if($(this).is(':checked')) {
+            valor = $(this).val();
         } else {
-          console.log($('this').val());
-
+            valor = $(this).val();
         }
-
+        console.log(valor);
     });
 
-    if(inputV.length == 9 ){
-        console.log("bien");
-    }
-    return container;
+    btn.on('click', () => {
+        state.phone = inputV.val();
+    })
+    return registro;
 }

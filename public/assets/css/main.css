@@ -12,8 +12,18 @@ h5 {
     padding-top: 63px;
 }
 
-#carousel p, #registro p {
+#carousel p, #registro p, #resendCode P {
     color: #8f8f8f;
+    font-size: 17.5px;
+}
+
+#registro .input-field, #resendCode .input-field {
+    position: relative;
+}
+#registro img:first-child,
+#resendCode img:first-child,
+#time-out img:first-child {
+    width: 105px;
 }
 /*CAROUSEL*/
 
@@ -40,13 +50,9 @@ h5 {
 #registro > .row {
     margin-bottom: 49px;
 }
-#registro img:first-child {
-    width: 105px;
-}
 
-#registro .input-field {
-    position: relative;
-}
+
+
 #registro input[type=text]:focus {
     border-bottom-color: #fbd43b;
     box-shadow: 0 1px 0 0 #fbd43b;
@@ -61,4 +67,22 @@ h5 {
 }
 #registro form a {
     color: #00c3a3;
+}
+
+
+/*RESEND CODE */
+
+#resendCode .input-field img {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  margin-left: 7px;
+  top: 16px;
+}
+
+#time-out {
+  background-color: #fbd43b;
+  padding-top: 210px;
+  width: 100%;
+  height: 100vh;
 }
