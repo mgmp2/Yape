@@ -67,7 +67,7 @@ last-child
 #resendCode .input-field img,
 #registerCard .input-field img,
 #passwCard .input-field img,
-#createUser .input-field img, {
+#createUser .input-field img {
     position: absolute;
     width: 21px;
     height: 23px;

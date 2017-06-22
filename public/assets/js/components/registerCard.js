@@ -76,20 +76,20 @@ const registerCard = () => {
     })
 
     btn.on('click', ()=> {
-        
-        // $.post('api/registerCard', {
-        //     userId : state.phone,
-        //     cardNumber : inputV.val(),
-        //     cardYear :inputAnio.val(),
-        //     cardMonth : inputMes.val(),
-        //     cardPassword : state.password
-        //    }, (response) => {
-        //
-        //        console.log(response);
-        //        $('.wrapper').empty();
-        //        passwCard();
-        //
-        //    },'json');
+
+        $.post('api/registerCard', {
+            phone : state.phone,
+            cardNumber : inputV.val(),
+            cardYear :inputAnio.val(),
+            cardMonth : inputMes.val(),
+            cardPassword : state.password
+           }, (response) => {
+
+               console.log(response);
+               $('.wrapper').empty();
+               passwCard();
+
+           },'json');
     })
     return $('#root').append(container);
 }

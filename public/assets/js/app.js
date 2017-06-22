@@ -3,22 +3,22 @@
 const render = (root) => {
   root.empty();
   const wrapper = $('<div class="wrapper"></div>');
-  // if(!state.phone) {
-  //     wrapper.append(registroNum( _ => render(root)));
-  // }
-  // else if(state.phone && !state.cod) {
-  //     wrapper.append(resendCode( _ => render(root)));
-  // }
-  // else if (state.cod && !state.name) {
-  //     wrapper.append(createUser( _ => render(root)));
-  // }
-  // else if (state.name && state.msn) {
-  //     wrapper.append(screenTimeOut (_ => render(root)));
-  // }
+  if(!state.phone) {
+      wrapper.append(registroNum( _ => render(root)));
+  }
+  else if(state.phone && !state.cod) {
+      wrapper.append(resendCode( _ => render(root)));
+  }
+  else if (state.cod && !state.name) {
+      wrapper.append(createUser( _ => render(root)));
+  }
+  else if (state.name && state.msn) {
+      wrapper.append(screenTimeOut (_ => render(root)));
+  }
 
 
   // wrapper.append(passwCard (_ => render(root)));
-wrapper.append(lastMove (_ => render(root)));
+// wrapper.append(lastMove (_ => render(root)));
 
   root.append(wrapper);
 }
