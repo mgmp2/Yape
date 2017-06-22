@@ -76,18 +76,17 @@ const registerCard = () => {
     })
 
     btn.on('click', ()=> {
-
+        state.numCard = inputV.val();
         $.post('api/registerCard', {
             phone : state.phone,
-            cardNumber : inputV.val(),
+            cardNumber : state.numCard,
             cardYear :inputAnio.val(),
             cardMonth : inputMes.val(),
             cardPassword : state.password
            }, (response) => {
 
                console.log(response);
-               $('.wrapper').empty();
-               passwCard();
+               render($('#root'));
 
            },'json');
     })

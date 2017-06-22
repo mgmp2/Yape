@@ -2,7 +2,7 @@
 
 const passwCard = (update) => {
 
-    const container = $('<div class="container" id="passwCard"></div>');
+    const passwordCard = $('<div class="container" id="passwCard"></div>');
 
     const rowFirst  = $('<div class="row center-align"></div>');
     const colFirst  = $('<div class="col s12"></div>');
@@ -35,9 +35,9 @@ const passwCard = (update) => {
     colBtn.append(btn);
     rowBtn.append(colBtn);
 
-    container.append(rowFirst);
-    container.append(rowSecond);
-    container.append(rowBtn);
+    passwordCard.append(rowFirst);
+    passwordCard.append(rowSecond);
+    passwordCard.append(rowBtn);
 
     validateNumber(inputV);
 
@@ -47,9 +47,13 @@ const passwCard = (update) => {
                 btn.removeClass("disabled");
             } else {
                 btn.addClass("disabled");
-                lastMove();
+
             }
     })
+    btn.on('click', (e) => {
+        e.preventDefault();
+        lastMove();
 
-    return container;
+    })
+    return passwordCard;
 }

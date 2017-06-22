@@ -12,9 +12,13 @@ const render = (root) => {
   else if (state.cod && !state.name) {
       wrapper.append(createUser( _ => render(root)));
   }
-  else if (state.name && state.msn) {
+  else if (state.name && state.msn && !state.numCard) {
       wrapper.append(screenTimeOut (_ => render(root)));
+  } else if (state.numCard) {
+      wrapper.append(passwCard (_ => render(root)));
+
   }
+
 
 
   // wrapper.append(passwCard (_ => render(root)));
@@ -29,6 +33,7 @@ const state = {
     cod: null,
     msn: null,
     name: null,
+    numCard: null,
     password: null
 };
 

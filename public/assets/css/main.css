@@ -161,6 +161,9 @@ last-child
   width: 100%;
   height: 100vh;
 }
+#time-out div:first-child {
+    margin: 0;
+}
 /*REGISTER CARD*/
 #registerCard > div:nth-child(2) > div:nth-child(2),
 #line span {
@@ -187,6 +190,49 @@ last-child
 
 
 /*LAST MOVE */
+#lastMove .bg-purple-light {
+    padding-top: 63px;
+    padding-bottom: 21px;
+    height: 37vh;
+}
+#lastMove .bg-purple-dark {
+    color: #fff;
+    position: relative;
+    height: 63vh;
+
+}
 #lastMove h5 {
     color: #fff;
+    margin-bottom: 0;
+}
+#lastMove .header-mov {
+    display: flex;
+}
+#lastMove .header-mov  p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 44px;
+}
+
+#lastMove .header-mov img {
+
+    bottom: 14px;
+    right: 26px;
+    position: absolute;
+    width: 26px;
+    height: 22px;}
+
+#lastMove .row-pay {
+    padding: 14px 21px;
+    color: #8f8f8f;
+}
+#lastMove .row-pay p {
+    font-size: 18px;
+    font-weight: 700;
+}
+#lastMove .row-send-get {
+    padding-top: 63px;
+}
+#lastMove .row-send-get img {
+    width: 38%:
 }
