@@ -72,8 +72,12 @@ const registroNum = (update) => {
            terms: true
        }, (response) => {
            state.msn = response.message;
+           console.log(response);
            if(!state.msn || state.msn!="El número ya existe"){
                update();
+           } else {
+               inputV.val("");
+               alert(state.msn);
            }
        },'json'); // post de jQuery
     })

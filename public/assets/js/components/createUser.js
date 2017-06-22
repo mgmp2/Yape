@@ -89,14 +89,17 @@ const createUser = (update) => {
         }
     })
     btn.on('click', (e) => {
-        state.user = inputUser.val();
+        state.name = inputUser.val();
+        state.password = inputClave.val();
+
         e.preventDefault();
         $.post('api/createUser', {
               phone: state.phone,
-              name: state.user,
+              name: state.name,
         	  email: inputEmail.val(),
-              password: inputClave.val()
+              password: state.password
            }, (response) => {
+               console.log(response);
                state.msn = response.message;
            },'json');
            if(state.msn || state.msn=="Usuario creado con éxito"){

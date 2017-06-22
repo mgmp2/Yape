@@ -12,10 +12,12 @@ h5 {
 .container {
     padding-top: 63px;
 }
-
+.btn.disabled {
+    color: #fff!important;
+}
 #carousel p, #registro p, #resendCode P {
-    color: #8f8f8f;
-    font-size: 17.5px;
+    color: #5d5151;
+    font-size: 19px;
 }
 
 #registro .input-field,
@@ -31,16 +33,38 @@ h5 {
 #createUser img:first-child {
     width: 105px;
 }
+
+#registro input[type=text].valid,
+#registro  [type=text],
+#registro input[type=text]:focus,
+#createUser input.valid,
+#createUser  input,
+#createUser input[type="text"]:focus,
+#createUser input[type="password"]:focus,
+#createUser input[type="text"]:focus,
+#resendCode input[type=text].valid,
+#resendCode  [type=text],
+#resendCode input[type=text]:focus {
+    border-bottom-color: #212121;
+    box-shadow: none;
+}
+
 /*CAROUSEL*/
 
 #carousel .owl-dot.active span{
      background: #f64552
 }
+#carousel .item {
+    padding-right: 14px;
+    padding-left: 14px;
+}
 .item img {
-    width: 50%!important;
+    width: 55%!important;
     margin: 0 auto;
 }
+.item p {
 
+}
 .btn-yellow, .btn-yellow:hover {
     background-color: #fbd43b;
     width: 80%;
@@ -51,8 +75,9 @@ h5 {
     padding: 0;
 }
 
+
 /*--------------*/
-/*REGISTRO*/
+/*REGISTRO DE NÚMERO*/
 #registro > .row,
 #passwCard > .row {
     margin-bottom: 49px;
@@ -60,7 +85,7 @@ h5 {
 
 
 
-#registro input[type=text]:focus,
+
 #createUser input[type=text]:focus {
     border-bottom-color: #fbd43b;
     box-shadow: 0 1px 0 0 #fbd43b;
@@ -70,27 +95,46 @@ h5 {
     width: 84px;
     height: 35px;
 }
+
 #terms * {
-    font-size: 14px;
+    font-size: 17px;
 }
 #registro form a {
     color: #00c3a3;
 }
 
-
+#registro button {
+    width: 50%;
+    height: 48px;
+    font-size: 1.3rem;
+}
+#registro [type="checkbox"].filled-in:not(:checked)+label:after {
+    border-color: rgba(206, 195, 195, 0.54);
+}
 /*RESEND CODE */
 
 #resendCode .input-field img,
 #registerCard .input-field img,
 #passwCard .input-field img,
 #createUser .input-field img {
-  position: absolute;
-  width: 21px;
-  height: 21px;
-  margin-left: 7px;
-  top: 16px;
+    position: absolute;
+    width: 21px;
+    height: 23px;
+    margin-left: 7px;
+    top: 16px;
+}
+/*CREATE USER*/
+
+#createUser input {
+    font-size: 21px;
+}
+#createUser p:last-child {
+    color: #8f8f8f;
 }
 
+
+
+/*---------------------*/
 #time-out {
   background-color: #fbd43b;
   padding-top: 210px;

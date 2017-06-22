@@ -11,11 +11,11 @@ const render = (root) => {
 
       wrapper.append(resendCode( _ => render(root)));
   }
-  else if (state.cod && !state.user) {
+  else if (state.cod && !state.name) {
       wrapper.append(createUser( _ => render(root)));
 
   }
-  else if (state.user && state.msn) {
+  else if (state.name && state.msn) {
       wrapper.append(screenTimeOut (_ => render(root)));
     //   wrapper.append(registerCard (_ => render(root)));
 
@@ -32,7 +32,8 @@ const state = {
     phone: null,
     cod: null,
     msn: null,
-    user: null,
+    name: null,
+    password: null
 };
 
 $( _ => {

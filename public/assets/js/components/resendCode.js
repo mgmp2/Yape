@@ -8,7 +8,7 @@ const resendCode = (update) => {
     const colFirst  = $('<div class="col s12"></div>');
     const imgFirst  = $('<img src="assets/img/icons/message.png" alt="phone">');
     const title     = $('<h5>Ahora ingresa tu código</h5>');
-    const parr      = $('<p>Enviamos un SMS con el código de validación al número<strong>'+state.phone+'</strong></p>');
+    const parr      = $('<p>Enviamos un SMS con el código de validación al número <strong>'+state.phone+'</strong></p>');
 
     const rowSecond = $('<div class="row"></div>');
     const colSecond = $('<div class="input-field col s12"></div>');
@@ -40,6 +40,7 @@ const resendCode = (update) => {
         //     },'json');
         // }, 21000);
         $.post('api/resendCode', { phone: state.phone }, (response) => {
+            console.log(response);
             state.cod = response.data;
             alert("Él código generado es: " +state.cod);
         },'json');
@@ -47,7 +48,7 @@ const resendCode = (update) => {
         inputV.on('keyup', () => {
             if(state.cod == inputV.val()) {
                 update();
-            } 
+            }
         })
     return container
 }
