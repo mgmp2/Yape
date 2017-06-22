@@ -85,7 +85,6 @@ const registerCard = () => {
             cardPassword : state.password
            }, (response) => {
 
-               console.log(response);
                render($('#root'));
 
            },'json');

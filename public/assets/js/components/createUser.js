@@ -91,14 +91,13 @@ const createUser = (update) => {
             btn.addClass("disabled");
         } else {
             btn.removeClass("disabled");
-            
+
         $.post('api/createUser', {
               phone: state.phone,
               name: state.name,
         	  email: inputEmail.val(),
               password: state.password
            }, (response) => {
-               console.log(response);
                state.msn = response.message;
            },'json');
            if(state.msn || state.msn=="Usuario creado con éxito"){

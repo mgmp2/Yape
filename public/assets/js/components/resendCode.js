@@ -40,7 +40,6 @@ const resendCode = (update) => {
                 phone: state.phone
             }, (response) => {
                 state.cod = response.data;
-                console.log(response);
                 alert("Él código generado es: " +state.cod);
             },'json');
         } else if (time == 22) {
@@ -48,7 +47,6 @@ const resendCode = (update) => {
                 phone: state.phone
             }, (response) => {
                 state.cod = response.data;
-                console.log(response);
                 alert("Él código generado es: " +state.cod);
             },'json');
         }time --;
