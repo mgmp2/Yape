@@ -47,18 +47,13 @@ const registroNum = (update) => {
     registro.append(rowSecond);
     registro.append(rowThird);
 
-    inputV.on('keypress', (e) => {
-        if(e.which >= 48 && e.which <=57 ) {
-            return true;
-        } else {
-            return false;
-        }
-    });
+
+    validateNumber(inputV);
 
     checkb.on('change', (e) => {
         e.preventDefault();
-        if(checkb.is(':checked')) {
-            if(inputV.val().length == 9) { btn.removeClass("disabled")}
+        if(checkb.is(':checked') && inputV.val().length == 9) {
+            btn.removeClass("disabled");
         } else {
             btn.addClass("disabled");
         };
@@ -77,6 +72,7 @@ const registroNum = (update) => {
                update();
            } else {
                inputV.val("");
+               btn.addClass("disabled");
                alert(state.msn);
            }
        },'json'); // post de jQuery

@@ -15,7 +15,8 @@ h5 {
 .btn.disabled {
     color: #fff!important;
 }
-#carousel p, #registro p, #resendCode P {
+#carousel p, #registro p, #resendCode p,
+#registerCard p:first-child{
     color: #5d5151;
     font-size: 19px;
 }
@@ -39,16 +40,29 @@ h5 {
 #registro input[type=text]:focus,
 #createUser input.valid,
 #createUser  input,
-#createUser input[type="text"]:focus,
-#createUser input[type="password"]:focus,
-#createUser input[type="text"]:focus,
+#createUser input[type=text]:focus
+#createUser input[type=password]:focus,
+#createUser input[type=text]:focus,
 #resendCode input[type=text].valid,
 #resendCode  [type=text],
-#resendCode input[type=text]:focus {
+#resendCode input[type=text]:focus,
+#registerCard input[type=text].valid,
+#registerCard  [type=text],
+#registerCard input[type=text]:focus {
     border-bottom-color: #212121;
     box-shadow: none;
 }
 
+#resendCode .input-field img,
+#registerCard .input-field img,
+#passwCard .input-field img,
+#createUser .input-field img {
+    position: absolute;
+    width: 21px;
+    height: 23px;
+    margin-left: 7px;
+    top: 16px;
+}
 /*CAROUSEL*/
 
 #carousel .owl-dot.active span{
@@ -65,7 +79,8 @@ h5 {
 .item p {
 
 }
-.btn-yellow, .btn-yellow:hover {
+.btn-yellow, .btn-yellow:hover,
+.btn-yellow:focus {
     background-color: #fbd43b;
     width: 80%;
     margin: 35px auto;
@@ -86,10 +101,10 @@ h5 {
 
 
 
-#createUser input[type=text]:focus {
+/*#createUser input[type=text]:focus {
     border-bottom-color: #fbd43b;
     box-shadow: 0 1px 0 0 #fbd43b;
-}
+}*/
 #registro .input-field img {
     position: absolute;
     width: 84px;
@@ -113,16 +128,7 @@ h5 {
 }
 /*RESEND CODE */
 
-#resendCode .input-field img,
-#registerCard .input-field img,
-#passwCard .input-field img,
-#createUser .input-field img {
-    position: absolute;
-    width: 21px;
-    height: 23px;
-    margin-left: 7px;
-    top: 16px;
-}
+
 /*CREATE USER*/
 
 #createUser input {
@@ -148,6 +154,9 @@ h5 {
 }
 #registerCard > div:nth-child(2) > div:nth-child(2) > img{
     width: 21px;
+}
+#registerCard .input-field img {
+    width: 25px;
 }
 #registerCard [placeholder="Mes"],
 #registerCard [placeholder="Año"] {

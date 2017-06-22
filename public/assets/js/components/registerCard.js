@@ -57,6 +57,25 @@ const registerCard = () => {
     container.append(rowThird);
     container.append(rowBtn);
 
+    validateNumber(inputV);
+    validateNumber(inputMes);
+    validateNumber(inputAnio);
 
+    console.log("CARD" +inputV.val().length);
+    console.log("mes"+inputMes.val().length);
+    console.log("Anio"+inputAnio.val().length);
+
+    inputAnio.on('keyup', (e) => {
+        e.preventDefault();
+        if(inputV.val().length == 16 &&
+           inputMes.val().length == 2 && inputMes.val() >=  1 && inputMes.val() <= 12 &&
+           inputAnio.val().length == 2 && inputAnio.val() >= 17 && inputAnio.val()<=24) {
+            btn.removeClass("disabled");
+        }else {
+            btn.addClass("disabled");
+
+        }
+
+    })
     return $('#root').append(container);
 }

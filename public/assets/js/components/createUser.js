@@ -78,16 +78,15 @@ const createUser = (update) => {
         } else {cont++;}
     })
 
-    inputClave.on('blur', (e) => {
+    inputClave.on('keyup', (e) => {
         e.preventDefault();
-        if(inputClave.val().length==6 && cont ==2 ){
-
+        if(inputClave.val().length ==6 && cont == 2){
             btn.removeClass("disabled");
         } else {
             btn.addClass("disabled");
+        } })
 
-        }
-    })
+
     btn.on('click', (e) => {
         state.name = inputUser.val();
         state.password = inputClave.val();
