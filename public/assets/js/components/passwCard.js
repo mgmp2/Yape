@@ -13,7 +13,7 @@ const passwCard = (update) => {
     const rowSecond = $('<div class="row"></div>');
     const colSecond = $('<div class="input-field col s12"></div>');
     const imgInput  = $('<img src="assets/img/icons/lock.png" alt="phone and number" class="responsive-img">');
-    const inputV    = $('<input id="icon_prefix" type="text" class="validate center-align" placeholder="- - - - -"maxlength="5">');
+    const inputV    = $('<input id="icon_prefix" type="password" class="validate center-align" placeholder="- - - - -"maxlength="5">');
 
 
 
@@ -39,6 +39,17 @@ const passwCard = (update) => {
     container.append(rowSecond);
     container.append(rowBtn);
 
+    validateNumber(inputV);
+
+
+    inputV.on('keyup', _ => {
+            if(inputV.val().length == 5){
+                btn.removeClass("disabled");
+            } else {
+                btn.addClass("disabled");
+                lastMove();
+            }
+    })
 
     return container;
 }

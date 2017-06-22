@@ -61,9 +61,6 @@ const registerCard = () => {
     validateNumber(inputMes);
     validateNumber(inputAnio);
 
-    console.log("CARD" +inputV.val().length);
-    console.log("mes"+inputMes.val().length);
-    console.log("Anio"+inputAnio.val().length);
 
     inputAnio.on('keyup', (e) => {
         e.preventDefault();
@@ -76,6 +73,23 @@ const registerCard = () => {
 
         }
 
+    })
+
+    btn.on('click', ()=> {
+        
+        // $.post('api/registerCard', {
+        //     userId : state.phone,
+        //     cardNumber : inputV.val(),
+        //     cardYear :inputAnio.val(),
+        //     cardMonth : inputMes.val(),
+        //     cardPassword : state.password
+        //    }, (response) => {
+        //
+        //        console.log(response);
+        //        $('.wrapper').empty();
+        //        passwCard();
+        //
+        //    },'json');
     })
     return $('#root').append(container);
 }

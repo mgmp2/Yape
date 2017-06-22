@@ -15,12 +15,19 @@ h5 {
 .btn.disabled {
     color: #fff!important;
 }
+
+.bg-purple-light {
+    background: #451e36
+}
+.bg-purple-dark {
+    background: #38052a;
+}
 #carousel p, #registro p, #resendCode p,
 #registerCard p:first-child{
     color: #5d5151;
     font-size: 19px;
 }
-
+last-child
 #registro .input-field,
 #resendCode .input-field,
 #passwCard .input-field {
@@ -31,7 +38,8 @@ h5 {
 #time-out img:first-child,
 #registerCard img:first-child,
 #passwCard img:first-child,
-#createUser img:first-child {
+#createUser img:first-child,
+#lastMove img:first-child {
     width: 105px;
 }
 
@@ -48,7 +56,10 @@ h5 {
 #resendCode input[type=text]:focus,
 #registerCard input[type=text].valid,
 #registerCard  [type=text],
-#registerCard input[type=text]:focus {
+#registerCard input[type=text]:focus,
+#passwCard input[type=password].valid,
+#passwCard  [type=password],
+#passwCard input[type=password]:focus {
     border-bottom-color: #212121;
     box-shadow: none;
 }
@@ -56,12 +67,20 @@ h5 {
 #resendCode .input-field img,
 #registerCard .input-field img,
 #passwCard .input-field img,
-#createUser .input-field img {
+#createUser .input-field img, {
     position: absolute;
     width: 21px;
     height: 23px;
     margin-left: 7px;
     top: 16px;
+}
+
+#registro button,
+#passwCard button {
+    width: 41%;
+    font-size: 1.3rem;
+    height: 50px;
+    border-radius: 5px;
 }
 /*CAROUSEL*/
 
@@ -99,12 +118,6 @@ h5 {
 }
 
 
-
-
-/*#createUser input[type=text]:focus {
-    border-bottom-color: #fbd43b;
-    box-shadow: 0 1px 0 0 #fbd43b;
-}*/
 #registro .input-field img {
     position: absolute;
     width: 84px;
@@ -118,17 +131,18 @@ h5 {
     color: #00c3a3;
 }
 
-#registro button {
-    width: 50%;
-    height: 48px;
-    font-size: 1.3rem;
-}
+
 #registro [type="checkbox"].filled-in:not(:checked)+label:after {
     border-color: rgba(206, 195, 195, 0.54);
 }
 /*RESEND CODE */
-
-
+#resendCode [src*="clock.png"] {
+    width: 21px;
+}
+#resendCode span {
+    color: #8f8f8f;
+    font-size: 15px;
+}
 /*CREATE USER*/
 
 #createUser input {
@@ -148,12 +162,14 @@ h5 {
   height: 100vh;
 }
 /*REGISTER CARD*/
-#registerCard > div:nth-child(2) > div:nth-child(2) {
+#registerCard > div:nth-child(2) > div:nth-child(2),
+#line span {
     font-size: 18px;
     color: #00c3a3;
 }
-#registerCard > div:nth-child(2) > div:nth-child(2) > img{
-    width: 21px;
+#registerCard > div:nth-child(2) > div:nth-child(2) > img,
+#line img {
+    width: 21px!important;
 }
 #registerCard .input-field img {
     width: 25px;
@@ -163,4 +179,14 @@ h5 {
     width: 21%;
     margin-right: 7px;
     margin-left: 7px;
+}
+/*PASSWORD CARD*/
+#passwCard button {
+    width: 50%;
+}
+
+
+/*LAST MOVE */
+#lastMove h5 {
+    color: #fff;
 }
