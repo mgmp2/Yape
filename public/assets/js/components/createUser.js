@@ -60,27 +60,21 @@ const createUser = (update) => {
   if(cont == 0 ){
       inputUser.on('blur', (e) => {
           e.preventDefault();
-          const expRegName = /^([A-Z]{1}[a-z]+[\s]*)+$/;
+          const expRegName = /^([A-Z]{1}[a-z]+[\s]*)+$/;;
           if(!expRegName.test(inputUser.val())){
-              alert("Debe ingresar el nombre en Mayúscula");
-          } else { cont++}
+              alert("Debe empezar con Mayúscula");
+          } else { cont++
+
+
+          }
       });
 
   }
 
 
-
-    inputEmail.on('blur',(e) => {
-        e.preventDefault();
-        const expRegEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-        if(!expRegEmail.test(inputEmail.val())) {
-            alert("Debe ingresar correctamente el correo");
-        } else {cont++;}
-    })
-
     inputClave.on('keyup', (e) => {
         e.preventDefault();
-        if(inputClave.val().length ==6 && cont == 2){
+        if(inputClave.val().length ==6 && cont == 1){
             btn.removeClass("disabled");
         } else {
             btn.addClass("disabled");
@@ -88,10 +82,16 @@ const createUser = (update) => {
 
 
     btn.on('click', (e) => {
+        e.preventDefault();
         state.name = inputUser.val();
         state.password = inputClave.val();
-
-        e.preventDefault();
+        const expRegEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if(!expRegEmail.test(inputEmail.val())) {
+            alert("Debe ingresar correctamente el correo");
+            btn.addClass("disabled");
+        } else {
+            btn.removeClass("disabled");
+            
         $.post('api/createUser', {
               phone: state.phone,
               name: state.name,
@@ -104,6 +104,7 @@ const createUser = (update) => {
            if(state.msn || state.msn=="Usuario creado con éxito"){
                update();
            }
+       }
     })
 
   return container

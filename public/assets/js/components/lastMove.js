@@ -4,6 +4,7 @@ const lastMove = () => {
 
     const rowFirst  = $('<div class="row center-align bg-purple-light"></div>');
     const colFirst  = $('<div class="col s12"></div>');
+    const imgSetting  = $('<img src="assets/img/icons/engine.png" class="img-engine" alt="engine">');
     const imgFirst  = $('<img src="assets/img/icons/happy-face.png" alt="happy face">');
     const title     = $('<h5>Hola</h5>');
 
@@ -13,8 +14,8 @@ const lastMove = () => {
 
     const boxMovimientos= $('<div class="bg-purple-dark"></div>')
 
-    const rowMov     = $('<div class="row center-align"></div>');
-    const colMov        = $('<div class="col s12 header-mov"></div>');
+    const rowMov     = $('<div class="row center-align row-header"></div>');
+    const colMov        = $('<div class="col s12 "></div>');
     const parMov        = $('<p>ÚLTIMOS MOVIMIENTOS</p><img src="assets/img/icons/right-arrow-circular-button.png" alt="right arrow"><br><hr>')
 
     const rowPay        = $('<div class="row row-pay"></div>');
@@ -36,6 +37,7 @@ const lastMove = () => {
 
     colFirst.append(imgFirst);
     colFirst.append(title);
+    colFirst.append(imgSetting);
     colSecond.append(imgScan);
     colSecond.append(textPar);
     rowFirst.append(colFirst);

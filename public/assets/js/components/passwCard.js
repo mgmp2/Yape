@@ -8,7 +8,7 @@ const passwCard = (update) => {
     const colFirst  = $('<div class="col s12"></div>');
     const imgFirst  = $('<img src="assets/img/icons/bcp-logo.png" alt="bcp logo">');
     const title     = $('<h5>Ingresa la clave de tu tarjeta</h5>');
-    const parr      = $('<p>Tarjeta<strong>****'+state.phone+'</strong></p>');
+    const parr      = $('<p>Tarjeta <strong>****'+state.numCard.substr(-4)+'</strong></p>');
 
     const rowSecond = $('<div class="row"></div>');
     const colSecond = $('<div class="input-field col s12"></div>');
